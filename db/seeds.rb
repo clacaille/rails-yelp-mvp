@@ -10,20 +10,32 @@ restaurants_attributes = [
   {
     name:         "Epicure au Bristol",
     address:      "112 rue du Fg St-Honoré 75008 Paris",
-    category:     "French",
+    category:     "french",
     phone_number: "0102030405"
   },
   {
     name:         "La truffière",
     address:      "4 rue Blainville 75005 Paris",
-    category:     "French",
+    category:     "french",
     phone_number: "0107080910"
   },
   {
     name:         "Le pré catelan",
     address:      "route de Suresnes 75016 Paris",
-    category:     "Spanish",
+    category:     "french",
     phone_number: "0600102030"
+  },
+  {
+    name:         "Le Pont de Sichuan",
+    address:      "86 rue de Richelieu 75002 Paris",
+    category:     "chinese",
+    phone_number: "0981057154"
+  },
+  {
+    name:         "Pizzeria Babalou",
+    address:      "4 rue Lamarck 75018 Paris",
+    category:     "italian",
+    phone_number: "0142513732"
   }
 ]
 restaurants_attributes.each { |params| Restaurant.create!(params) }
