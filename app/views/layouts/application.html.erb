@@ -13,7 +13,7 @@
   <body>
     <div class="navbar-wagon">
     <!-- Logo -->
-      <%= link_to image_tag("logo.png"), "/", class: "text-center" %>
+      <%= link_to image_tag("logo.png"), "/" %>
 
     <!-- Button (call-to-action) -->
       <%= link_to "Add a restaurant", new_restaurant_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
@@ -21,4 +21,5 @@
     </div>
     <%= yield %>
   </body>
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
 </html>

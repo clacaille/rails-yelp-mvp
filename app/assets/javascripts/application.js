@@ -13,5 +13,33 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require_tree .
+$(document).ready(function() {
+    var address = $("#address").html();
+    console.log(address);
+    var myUrl = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address;
+    console.log(myUrl);
+    $.ajax({
+      type: "GET",
+      url: myUrl,
+      success: function(data) {
+        var latitude = data.results[0].geometry.location.lat;
+        var longitude = data.results[0].geometry.location.lng;
+        $("#geoloc").empty().append("<h2>" + latitude + "</h2>");
+        $("#geoloc").append("<h2>" + longitude + "</h2>");
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: { lat: latitude, lng: longitude },
+          zoom: 14
+        });
+        var marker = new google.maps.Marker({
+          map: map,
+          position: { lat: latitude, lng: longitude }
+        });
+      },
+      error: function(jqXHR) {
+        console.log("ERROR");
+        console.error(jqXHR.responseText);
+      }
+    });
+
+});

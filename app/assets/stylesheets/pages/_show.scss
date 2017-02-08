@@ -1,0 +1,30 @@
+.restaurant {
+  display: flex;
+  justify-content: space-around;
+  height: 100vh;
+}
+
+.restaurant-infos {
+  background-color: #AFE0FD;
+  margin: 0;
+  flex: 1;
+}
+
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  h3 {
+    border-bottom: solid;
+  }
+}
+
+.review {
+  border-bottom: dotted;
+}
+
+.form {
+  width: 75vh;
+  margin: auto;
+}

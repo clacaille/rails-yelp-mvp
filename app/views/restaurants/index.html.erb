@@ -2,12 +2,16 @@
   <h1>Restaurants</h1>
 </div>
 
-<div class="text-center">
-  <% @restaurants.each do |restaurant| %>
-    <div>
-      <h3><%= restaurant.name %></h3>
-      <p>Category: <%= restaurant.category %></p>
-      <p> <%= link_to "See more", restaurant_path(restaurant) %></p>
+<div class="list">
+<% @restaurants.each do |restaurant| %>
+  <%= link_to restaurant_path(restaurant), class: "unstyled-link" do %>
+    <div class="product">
+      <div class='product-body text-center'>
+        <h3><%= restaurant.name %></h3>
+        <p>Category: <%= restaurant.category %></p>
+      </div>
     </div>
   <% end %>
+<% end %>
 </div>
+
